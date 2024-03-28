@@ -23,11 +23,15 @@ const UsernameMenu = () => {
             <DropdownMenuContent>
                 {/* <DropdownMenuLabel>My Account</DropdownMenuLabel> */}
                 <DropdownMenuItem>
+                    <Link to="manage-restaurant" className="font-bold hover:text-orange-500">Manage Restaurant</Link>
+                </DropdownMenuItem>
+                <Separator />
+                <DropdownMenuItem>
                     <Link to="user-profile" className="font-bold hover:text-orange-500">User Profile</Link>
                 </DropdownMenuItem>
                 <Separator />
                 <DropdownMenuItem>
-                    <Button onClick={()=>logout()} className="flex flex-1 font-bold bg-orange-500">Log Out</Button>
+                    <Button onClick={() => logout()} className="flex flex-1 font-bold bg-orange-500">Log Out</Button>
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>

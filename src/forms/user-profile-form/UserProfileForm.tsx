@@ -28,8 +28,8 @@ type UserFormData = z.infer<typeof formSchema>;
 
 type Props = {
     onSave: (userProfileData: UserFormData) => void;
-    isLoading: boolean,
-    currentUser: User
+    isLoading: boolean;
+    currentUser: User;
 }
 
 const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
