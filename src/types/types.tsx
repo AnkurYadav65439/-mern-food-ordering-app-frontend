@@ -38,3 +38,12 @@ export type UpdateUserRequest = {
     city: string;
     country: string;
 }
+
+export type RestaurantSearchResponse = {
+    data: Restaurant[];
+    pagination: {
+        total: number;
+        page: number;
+        pages: number;
+    }
+}

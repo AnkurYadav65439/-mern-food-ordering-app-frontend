@@ -5,12 +5,14 @@ import AuthCallbackPage from "./pages/AuthCallbackPage.tsx"
 import UserProfilePage from "./pages/UserProfilePage.tsx"
 import ProtectedRoute from "./auth/ProtectedRoute.tsx"
 import ManageRestaurantPage from "./pages/ManageRestaurantPage.tsx"
+import SearchPage from "./pages/SearchPage.tsx"
 
 function AppRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Layout showHero><HomePage /></Layout>}></Route>
             <Route path="/auth-callback" element={<AuthCallbackPage />}></Route>
+            <Route path="/search/:city" element={<Layout><SearchPage /></Layout>}></Route>
             {/* protected routes */}
             <Route element={<ProtectedRoute />}>
                 <Route
