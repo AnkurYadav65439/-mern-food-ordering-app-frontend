@@ -1,4 +1,4 @@
-import { Auth0Provider } from "@auth0/auth0-react";
+import { AppState, Auth0Provider } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
@@ -20,11 +20,11 @@ const Auth0ProviderWithNavigate = ({ children }: Props) => {
     }
 
     //user redirected here by provider
-    const onRedirectCallback = () => {
-        //we also get here (appstate?: AppState, user?: User) as respnse
+    const onRedirectCallback = (appState?: AppState) => {
+        //we also get here (appState?: AppState, user?: User) as respnse
         //instead of creating user here, navigating to AuthCallbackPage(before access-token topic as access-token get from useAuth hook and 
         //useAuth hook only used within authProvider and here we are outside it)
-        navigate("/auth-callback")
+        navigate(appState?.returnTo || "/auth-callback");
     }
 
     return (

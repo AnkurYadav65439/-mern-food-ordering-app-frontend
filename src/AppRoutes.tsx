@@ -6,6 +6,7 @@ import UserProfilePage from "./pages/UserProfilePage.tsx"
 import ProtectedRoute from "./auth/ProtectedRoute.tsx"
 import ManageRestaurantPage from "./pages/ManageRestaurantPage.tsx"
 import SearchPage from "./pages/SearchPage.tsx"
+import DetailPage from "./pages/DetailPage.tsx"
 
 function AppRoutes() {
     return (
@@ -13,6 +14,7 @@ function AppRoutes() {
             <Route path="/" element={<Layout showHero><HomePage /></Layout>}></Route>
             <Route path="/auth-callback" element={<AuthCallbackPage />}></Route>
             <Route path="/search/:city" element={<Layout><SearchPage /></Layout>}></Route>
+            <Route path="/detail/:restaurantId" element={<Layout><DetailPage /></Layout>}></Route>
             {/* protected routes */}
             <Route element={<ProtectedRoute />}>
                 <Route
