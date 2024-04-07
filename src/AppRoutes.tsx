@@ -7,6 +7,7 @@ import ProtectedRoute from "./auth/ProtectedRoute.tsx"
 import ManageRestaurantPage from "./pages/ManageRestaurantPage.tsx"
 import SearchPage from "./pages/SearchPage.tsx"
 import DetailPage from "./pages/DetailPage.tsx"
+import OrderStatusPage from "./pages/OrderStatusPage.tsx"
 
 function AppRoutes() {
     return (
@@ -24,6 +25,10 @@ function AppRoutes() {
                 <Route
                     path="/manage-restaurant"
                     element={<Layout><ManageRestaurantPage /></Layout>}>
+                </Route>
+                <Route
+                    path="/order-status"
+                    element={<Layout><OrderStatusPage /></Layout>}>
                 </Route>
             </Route>
             <Route path="*" element={<Navigate to="/" />}></Route>
