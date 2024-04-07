@@ -54,7 +54,8 @@ export const useCreateMyRestaurant = () => {
         mutate: createRestaurant,
         isLoading,
         isSuccess,
-        error
+        error,
+        reset
     } = useMutation(createMyRestaurantRequest);
 
     if (isSuccess) {
@@ -63,6 +64,7 @@ export const useCreateMyRestaurant = () => {
 
     if (error) {
         toast.error("Unable to create restaurant");
+        reset();
     }
 
     return {
@@ -95,7 +97,8 @@ export const useUpdateMyRestaurant = () => {
         mutate: updateRestaurant,
         isLoading,
         isSuccess,
-        error
+        error,
+        reset
     } = useMutation(updateMyRestaurantRequest);
 
     if (isSuccess) {
@@ -104,6 +107,7 @@ export const useUpdateMyRestaurant = () => {
 
     if (error) {
         toast.error("Unable to update restaurant");
+        reset();
     }
 
     return {
