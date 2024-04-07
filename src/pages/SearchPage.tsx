@@ -29,13 +29,7 @@ const SearchPage = () => {
 
     const { results, isLoading } = useSearchRestaurants(searchState, city);
 
-    if (isLoading) {
-        return <span>Loading...</span>
-    }
-
-    if (!city || !results?.data) {
-        return <span>No results found</span>
-    }
+    console.log("searchpage: isExpanded:", isExpanded, "results:", results)
 
     //or searchForm 
     const setSearchQuery = (searchFormData: SearchForm) => {
@@ -75,6 +69,15 @@ const SearchPage = () => {
             selectedCuisines,
             page: 1
         }))
+    }
+
+
+    if (isLoading) {
+        <span>Loading...</span>
+    }
+
+    if (!city || !results?.data) {
+        return <span>No results found</span>
     }
 
     return (
