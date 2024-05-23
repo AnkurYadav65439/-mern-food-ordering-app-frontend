@@ -29,8 +29,6 @@ const SearchPage = () => {
 
     const { results, isLoading } = useSearchRestaurants(searchState, city);
 
-    console.log("searchpage: isExpanded:", isExpanded, "results:", results)
-
     //or searchForm 
     const setSearchQuery = (searchFormData: SearchForm) => {
         setSearchState((prevState) => ({
@@ -89,7 +87,7 @@ const SearchPage = () => {
                 <SearchBar searchQuery={searchState.searchQuery} placeHolder="Search by cuisine or restaurant name" onSubmit={setSearchQuery} onReset={resetSearch} />
                 <div className="flex flex-col lg:flex-row lg:justify-between">
                     <SearchResultInfo total={results.pagination.total} city={city} />
-                    <SortOptionDropdown onChange={(value) => setSortOption(value)} sortOption={searchState.sortOption} />
+                    <SortOptionDropdown onChange={setSortOption} sortOption={searchState.sortOption} />
                 </div>
                 {results.data.map((restaurant: Restaurant) => (
                     <SearchResultCard restaurant={restaurant} />

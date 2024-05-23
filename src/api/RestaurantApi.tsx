@@ -46,8 +46,8 @@ export const useSearchRestaurants = (searchState: searchState, city?: string) =>
         }
         return response.json();
     }
-    //tells query to fetch again whenever 'searchState' changes. or else would show chached data
-    const { data: results, isLoading } = useQuery(["searchRestaurants", searchState], searchRestaurantsRequest, { enabled: !!city });
+    //tells query to fetch again whenever 'searchState' or 'city' changes. or else would show chached data
+    const { data: results, isLoading } = useQuery(["searchRestaurants", searchState, city], searchRestaurantsRequest, { enabled: !!city });
 
     return {
         results,
